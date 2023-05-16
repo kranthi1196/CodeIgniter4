@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css1">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css1">
+
+    <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
+
+    <script>
+        window.onload=function() {
+            var file = document.getElementById("submit");
+            file.onclick = addImage;
+        }
+
+        function addImage(){
+
+
+            var InputImage = document.getElementById("item");
+            var image.src = URL.createObjectURL(event.target.files[]);
+            var ol = document.getElementById("ol");
+            var li = document.createElement("li");
+            li.innerHTML = image.src;
+            li.onclick = function(){this.parentNode.removeChild(this);}
+            if(ul.childElementCount == 0){
+                ul.appendChild(li);;
+            }
+            else {
+                ul.insertBefore(li, ul.firstChild);
+            } 
+        }
+    </script>
+
+    <script>
+         const imgInput = document.querySelector('input');
+            const imgEl = document.querySelector('img');
+            imgInput.addEventListener('change', ()=>{
+                if(imgInput.files && imgInput.files[0]){
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        imgEl.src = e.target.result;
+                    }
+                    reader.readAsDataURL(imgInput.files[0]);
+                }
+            })
+    </script>
+
+</head>
+<body>
+    <!-- Input Field Here -->
+    <form action="" align="center" style="">
+    Choose a File : <input type="file" id="item">
+    <input type="button" value="Add" id="submit">
+    </form>
+
+    <!-- Display of Input Elements -->
+    <ol id="ol">
+        <img src="#" alt="">
+    </ol>
+
+</body>
+</html>
