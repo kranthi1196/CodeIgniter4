@@ -69,3 +69,7 @@ $routes->match(['get', 'post'], 'SendMail/sendMail', 'SendMail::sendMail');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+/*$routes->setDefaultController('Home');
+$routes->get('/Test', 'Test::index');
+$routes->get('/Online', 'Online::index');*/
+
